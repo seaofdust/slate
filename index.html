@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>API Reference</title>
+    <title>Testing API Reference</title>
 
     <style>
       .highlight table td { padding: 5px; }
@@ -201,7 +201,7 @@
       <script src="javascripts/all.js"></script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+  <body class="index" data-languages="[&quot;lua&quot;,&quot;python&quot;,&quot;javascript&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -211,8 +211,7 @@
     <div class="toc-wrapper">
       <img src="images/logo.png" class="logo" alt="Logo" />
         <div class="lang-selector">
-              <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="ruby">ruby</a>
+              <a href="#" data-language-name="lua">lua</a>
               <a href="#" data-language-name="python">python</a>
               <a href="#" data-language-name="javascript">javascript</a>
         </div>
@@ -222,22 +221,81 @@
         <ul class="search-results"></ul>
       <ul id="toc" class="toc-list-h1">
           <li>
-            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+            <a href="#versions" class="toc-h1 toc-link" data-title="Versions">Versions</a>
           </li>
           <li>
-            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+            <a href="#the-application-tools" class="toc-h1 toc-link" data-title="The Application Tools">The Application Tools</a>
           </li>
           <li>
-            <a href="#kittens" class="toc-h1 toc-link" data-title="Kittens">Kittens</a>
+            <a href="#check-system-files" class="toc-h1 toc-link" data-title="Check System files">Check System files</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-all-kittens" class="toc-h2 toc-link" data-title="Get All Kittens">Get All Kittens</a>
+                    <a href="#options" class="toc-h2 toc-link" data-title="Options">Options</a>
                   </li>
                   <li>
-                    <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="Get a Specific Kitten">Get a Specific Kitten</a>
+                    <a href="#example" class="toc-h2 toc-link" data-title="Example">Example</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#check-system-manifest-file" class="toc-h1 toc-link" data-title="Check System Manifest File">Check System Manifest File</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#file-section-all" class="toc-h2 toc-link" data-title="File Section All">File Section All</a>
                   </li>
                   <li>
-                    <a href="#delete-a-specific-kitten" class="toc-h2 toc-link" data-title="Delete a Specific Kitten">Delete a Specific Kitten</a>
+                    <a href="#file-section-39-name-39" class="toc-h2 toc-link" data-title="File Section 'Name'">File Section 'Name'</a>
+                  </li>
+                  <li>
+                    <a href="#section-options" class="toc-h2 toc-link" data-title="Section Options">Section Options</a>
+                  </li>
+                  <li>
+                    <a href="#general-rules-for-folder-file" class="toc-h2 toc-link" data-title="General rules for folder/file">General rules for folder/file</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#factory-reset" class="toc-h1 toc-link" data-title="Factory Reset">Factory Reset</a>
+          </li>
+          <li>
+            <a href="#server-control" class="toc-h1 toc-link" data-title="Server Control">Server Control</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#usage" class="toc-h2 toc-link" data-title="Usage">Usage</a>
+                  </li>
+                  <li>
+                    <a href="#options-2" class="toc-h2 toc-link" data-title="Options">Options</a>
+                  </li>
+                  <li>
+                    <a href="#example-3" class="toc-h2 toc-link" data-title="Example">Example</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#set-timezone" class="toc-h1 toc-link" data-title="Set Timezone">Set Timezone</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#options-3" class="toc-h2 toc-link" data-title="Options">Options</a>
+                  </li>
+                  <li>
+                    <a href="#example-4" class="toc-h2 toc-link" data-title="Example">Example</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#zigbee" class="toc-h1 toc-link" data-title="Zigbee">Zigbee</a>
+          </li>
+          <li>
+            <a href="#zwave" class="toc-h1 toc-link" data-title="Zwave">Zwave</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#usage-2" class="toc-h2 toc-link" data-title="Usage">Usage</a>
+                  </li>
+                  <li>
+                    <a href="#options-4" class="toc-h2 toc-link" data-title="Options">Options</a>
+                  </li>
+                  <li>
+                    <a href="#example-5" class="toc-h2 toc-link" data-title="Example">Example</a>
                   </li>
               </ul>
           </li>
@@ -253,185 +311,310 @@
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
-
-<p>We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
-
-<p>This example API documentation page was created with <a href="https://github.com/lord/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
-<h1 id='authentication'>Authentication</h1>
-<blockquote>
-<p>To authorize, use this code:</p>
-</blockquote>
-<pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"api_endpoint_here"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-</code></pre>
-<blockquote>
-<p>Make sure to replace <code>meowmeowmeow</code> with your API key.</p>
-</blockquote>
-
-<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
-
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
-
-<p><code>Authorization: meowmeowmeow</code></p>
-
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+        <h1 id='versions'>Versions</h1>
+<aside class="warning">
+This is test documentation for Markdown styling ONLY. Please do not reference.
 </aside>
-<h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span>
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieves all kittens.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
-<h3 id='query-parameters'>Query Parameters</h3>
 <table><thead>
 <tr>
-<th>Parameter</th>
-<th>Default</th>
+<th>Code Version</th>
+<th>Document Version</th>
+<th>Document Date</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>1.3</td>
+<td>1.0</td>
+<td>2 July 2018</td>
+</tr>
+</tbody></table>
+<h1 id='the-application-tools'>The Application Tools</h1>
+<p>The following tools provided easy access to control and maintain the ConnectedLife system:</p>
+
+<ul>
+<li><a href="#check-system-files">Check System files</a></li>
+<li><a href="#check-system-manifest-file">Check System Manifest File </a></li>
+<li><a href="#factory-reset">Factory Reset</a></li>
+<li><a href="#server-control">Server Control</a></li>
+<li><a href="#set-timezone">Set timezone</a></li>
+<li><a href="#zigbee">Zigbee tools</a></li>
+<li><a href="#zwave">Zwave tools</a></li>
+</ul>
+
+<p>They are in the folder <code>/opt/sensorhub/tools</code>.</p>
+<h1 id='check-system-files'>Check System files</h1>
+<p>File: <strong>checkSystemFiles.lua</strong></p>
+
+<p><code>checkSystemFiles.lua [options]</code></p>
+
+<p>This tool allows you to check the system files, and make sure each system file has the following attributes:</p>
+
+<ol>
+<li>The file exists</li>
+<li>The file is the correct version.</li>
+<li>The file has the correct permissions.</li>
+<li>The file has the correct ownership.</li>
+</ol>
+
+<p>This tool will look at a meta file to get a list of files to check.</p>
+
+<p>The default manifest will be loaded at <code>/var/lib/sensorhub/resetData/manifest.conf</code>.</p>
+
+<p>See <a href="#check-system-manifest-file">Check System Manifest File</a> below about the format of the manifest file.</p>
+<h2 id='options'>Options</h2><pre class="highlight lua tab-lua"><code><span class="o">-</span><span class="n">m</span><span class="p">,</span> <span class="c1">--manifest=FILENAME          manifest config file,</span>
+                                 <span class="n">defaults</span> <span class="n">to</span> <span class="n">the</span> <span class="n">filename</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">sensorhub</span><span class="o">/</span><span class="n">resetData</span><span class="o">/</span><span class="n">manifest</span><span class="p">.</span><span class="n">conf</span>
+<span class="o">-</span><span class="n">w</span><span class="p">,</span> <span class="c1">--write                      Write and copy the files over</span>
+<span class="o">-</span><span class="n">v</span><span class="p">,</span> <span class="c1">--verbose                    a combined short and long option</span>
+    <span class="c1">--version                    display version information, then exit</span>
+<span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="c1">--help                       display this help, then exit</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="n">Here</span> <span class="ow">is</span> <span class="n">some</span> <span class="n">sample</span> <span class="n">python</span> <span class="n">code</span><span class="err">!</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Here</span> <span class="nx">is</span> <span class="nx">some</span> <span class="nx">sample</span> <span class="nx">javascript</span> <span class="nx">code</span><span class="o">!</span>
+</code></pre>
+<p>The following options are available</p>
+<h2 id='example'>Example</h2><pre class="highlight lua tab-lua"><code><span class="err">$</span> <span class="p">.</span><span class="o">/</span><span class="n">checkSystemFiles</span><span class="p">.</span><span class="n">lua</span> <span class="c1">--write</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="n">Here</span> <span class="ow">is</span> <span class="n">some</span> <span class="n">sample</span> <span class="n">python</span> <span class="n">code</span><span class="err">!</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Here</span> <span class="nx">is</span> <span class="nx">some</span> <span class="nx">sample</span> <span class="nx">javascript</span> <span class="nx">code</span><span class="o">!</span>
+</code></pre>
+<p>Check files and write changes</p>
+<h1 id='check-system-manifest-file'>Check System Manifest File</h1>
+<p>The manifest file contains all of the files that need to be checked.</p>
+
+<p>Any line starting with <code>#</code> will be treated as a comment line and will be ignored in processing this file.</p>
+<h2 id='file-section-all'>File Section All</h2>
+<p>Section for all default values applied to any parameter that is not specified in the filename sections.</p>
+
+<p><code>[__all__]</code></p>
+<h2 id='file-section-39-name-39'>File Section &#39;Name&#39;</h2>
+<p>Each file checked by the Check System Files tool is names as a section.</p>
+
+<p><code>[name]</code></p>
+
+<p>Where <code>name</code> is the name of the file section.</p>
+<h2 id='section-options'>Section Options</h2>
+<p>Each section can contain a <em>name</em>=<em>value</em> pair. The section options is specified as the <em>name</em> part.
+So to set the source path option you need to add in the line:</p>
+
+<p><code>source=/my/path</code></p>
+<h3 id='source'>source=</h3>
+<p>Absolute source path to a source file with the default global folder and file appended.</p>
+<h3 id='destination'>destination=</h3>
+<p>Absolute destination path to a destination with the default folder and file appended.</p>
+<h3 id='sourcefolder'>sourceFolder=</h3>
+<p>Absolute path with no folder appended</p>
+<h3 id='destinationfolder'>destinationFolder=</h3>
+<p>Absolute path with no folder appended</p>
+<h3 id='folder'>folder=</h3>
+<p>Relative folder to append to both source and destination paths</p>
+<h3 id='file'>file=</h3>
+<p>Filename to append to the source and destination paths</p>
+<h3 id='destinationfile'>destinationFile=</h3>
+<p>Absolute path to destination file</p>
+<h3 id='sourcefile'>sourceFile=</h3>
+<p>Absolute path to the source file</p>
+<h2 id='general-rules-for-folder-file'>General rules for folder/file</h2><pre class="highlight lua tab-lua"><code><span class="n">sourceFile</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">sourceFile</span><span class="o">&gt;</span> <span class="err">|</span> <span class="o">&lt;</span><span class="n">sourceFolder</span><span class="o">&gt;&lt;</span><span class="n">file</span><span class="o">&gt;</span> <span class="err">|</span> <span class="o">&lt;</span><span class="n">source</span><span class="o">&gt;&lt;</span><span class="n">folder</span><span class="o">&gt;&lt;</span><span class="n">file</span><span class="o">&gt;</span>
+<span class="n">destinationFile</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">destinationFile</span><span class="o">&gt;</span> <span class="err">|</span> <span class="o">&lt;</span><span class="n">destinationFolder</span><span class="o">&gt;&lt;</span><span class="n">file</span><span class="o">&gt;</span> <span class="err">|</span> <span class="o">&lt;</span><span class="n">destination</span><span class="o">&gt;&lt;</span><span class="n">folder</span><span class="o">&gt;&lt;</span><span class="n">file</span><span class="o">&gt;</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="n">Here</span> <span class="ow">is</span> <span class="n">some</span> <span class="n">sample</span> <span class="n">python</span> <span class="n">code</span><span class="err">!</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Here</span> <span class="nx">is</span> <span class="nx">some</span> <span class="nx">sample</span> <span class="nx">javascript</span> <span class="nx">code</span><span class="o">!</span>
+</code></pre>
+<p>The following rules will be applied to generating the source and destination file
+based on the values assigned in the file section or in the global section.</p>
+<h3 id='chmod'>chmod=</h3><pre class="highlight lua tab-lua"><code><span class="p">([</span><span class="n">ugoa</span><span class="p">])[</span><span class="o">+-=</span><span class="p">][</span><span class="n">rwx</span><span class="p">]</span>
+
+<span class="n">values</span> <span class="n">within</span> <span class="n">a</span> <span class="p">()</span> <span class="n">are</span> <span class="n">optional</span>
+<span class="n">values</span> <span class="n">within</span> <span class="n">a</span> <span class="p">[]</span> <span class="n">are</span> <span class="n">a</span> <span class="n">single</span> <span class="n">char</span> <span class="k">in</span> <span class="n">that</span> <span class="n">range</span>
+
+<span class="n">The</span> <span class="p">([</span><span class="n">ugoa</span><span class="p">])</span> <span class="n">is</span> <span class="n">optional</span><span class="p">,</span> <span class="n">defaults</span> <span class="n">to</span> <span class="s1">'a'</span>
+<span class="n">so</span> <span class="s1">'+x'</span> <span class="n">is</span> <span class="n">the</span> <span class="n">same</span> <span class="n">as</span> <span class="s1">'a+x'</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="n">Here</span> <span class="ow">is</span> <span class="n">some</span> <span class="n">sample</span> <span class="n">python</span> <span class="n">code</span><span class="err">!</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Here</span> <span class="nx">is</span> <span class="nx">some</span> <span class="nx">sample</span> <span class="nx">javascript</span> <span class="nx">code</span><span class="o">!</span>
+</code></pre>
+<p>Changing file rights using the chmod option, making sure the files have the correct bits set.</p>
+
+<p>Simple version of chmod values, can be in the following format:</p>
+<h3 id='chown'>chown=</h3>
+<p>Change the file ownership to <code>&lt;username&gt;:&lt;groupname&gt;</code> or <code>&lt;userId&gt;:&lt;groupId&gt;</code></p>
+<h3 id='operation'>operation=</h3>
+<p>Decide on the type of operation to perform on the file, they can be one of the following values:</p>
+
+<p>new       - only copy if does not exist.
+    update    - copy if does not exist or if different to the source.
+    delete    - remove the file if it exists as the source.
+    install   - not enabled at the moment, since we are now using yocto build,
+            but copy over when doing a forced copy.</p>
+<h3 id='example-2'>Example</h3><pre class="highlight lua tab-lua"><code><span class="p">[</span><span class="n">__all__</span><span class="p">]</span>
+<span class="n">source</span> <span class="o">=</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">sensorhub</span><span class="o">/</span><span class="n">resetData</span>
+<span class="n">destination</span> <span class="o">=</span> <span class="o">/</span><span class="n">etc</span>
+
+<span class="o">#</span> <span class="n">The</span> <span class="n">files</span> <span class="n">that</span> <span class="n">need</span> <span class="n">checking</span><span class="o">...</span>
+<span class="p">[</span><span class="n">avahi</span><span class="o">-</span><span class="n">http</span><span class="p">.</span><span class="n">service</span><span class="p">]</span>
+<span class="n">title</span> <span class="o">=</span> <span class="n">avahi</span> <span class="n">http</span><span class="p">.</span><span class="n">service</span>
+<span class="o">#</span> <span class="n">source</span> <span class="n">file</span> <span class="n">will</span> <span class="n">be</span> <span class="n">at</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">sensorhub</span><span class="o">/</span><span class="n">resetData</span><span class="o">/</span><span class="n">avahi</span><span class="o">/</span><span class="n">services</span><span class="o">/</span><span class="n">http</span><span class="p">.</span><span class="n">service</span>
+<span class="o">#</span> <span class="n">destination</span> <span class="n">file</span> <span class="n">will</span> <span class="n">be</span> <span class="n">at</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">avahi</span><span class="o">/</span><span class="n">services</span><span class="o">/</span><span class="n">http</span><span class="p">.</span><span class="n">service</span>
+<span class="n">file</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="n">service</span>
+<span class="n">folder</span> <span class="o">=</span> <span class="n">avahi</span><span class="o">/</span><span class="n">services</span>
+<span class="o">#</span> <span class="n">only</span> <span class="n">copy</span> <span class="n">the</span> <span class="n">file</span> <span class="k">if</span> <span class="n">it</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">exist</span>
+<span class="n">operation</span> <span class="o">=</span> <span class="n">new</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="n">Here</span> <span class="ow">is</span> <span class="n">some</span> <span class="n">sample</span> <span class="n">python</span> <span class="n">code</span><span class="err">!</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Here</span> <span class="nx">is</span> <span class="nx">some</span> <span class="nx">sample</span> <span class="nx">javascript</span> <span class="nx">code</span><span class="o">!</span>
+</code></pre><h1 id='factory-reset'>Factory Reset</h1>
+<p>File: <strong>factoryReset.sh</strong></p>
+
+<p><code>factoryReset.sh</code></p>
+
+<p>This tool allows you to start, stop, enable, disable and restart all of the ConnectLife servers.
+The servers available are the following:</p>
+
+<p>Bash script to reset all files to the factory default. This script does the following tasks:</p>
+
+<ul>
+<li>Stop all services</li>
+<li>Stop the redis server</li>
+<li>Delete all redis data</li>
+<li>Start redis server</li>
+<li>System Check all files</li>
+<li>Restart web server lighttpd</li>
+<li>Start up watchdog service</li>
+</ul>
+<h1 id='server-control'>Server Control</h1>
+<p>File: <strong>serverContorl.lua</strong></p>
+
+<p>This tool allows you to start, stop, enable, disable and restart all of the ConnectedLife servers.
+The servers available are the following:</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Systemctl name</th>
+<th>Application name</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
+<td>action</td>
+<td>sensorhub-action</td>
+<td>sensorHubAction.lua</td>
+<td>Process Actions</td>
 </tr>
 <tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
+<td>data</td>
+<td>sensorhub-data</td>
+<td>sensorHubData.lua</td>
+<td>Send event data</td>
+</tr>
+<tr>
+<td>watchdog</td>
+<td>sensorhub-watchdog</td>
+<td>sensorHubWatchdog.lua</td>
+<td>General watchdog/maintenance server</td>
+</tr>
+<tr>
+<td>bluetooth</td>
+<td>sensorhub-bluetooth</td>
+<td>sensorHubBluetooth.lua</td>
+<td>Process Bluetooth devices</td>
+</tr>
+<tr>
+<td>bluetoothScanner</td>
+<td>sensorhub-bluetooth-scanner</td>
+<td>sensorHubBluetoothScanner.lua</td>
+<td>Bluetooth reader</td>
+</tr>
+<tr>
+<td>network</td>
+<td>sensorhub-network</td>
+<td>sensorHubNetwork.lua</td>
+<td>Process network devices</td>
+</tr>
+<tr>
+<td>zwave</td>
+<td>sensorhub-zwave</td>
+<td>sensorHubZwave.lua</td>
+<td>Process Zwave devices</td>
 </tr>
 </tbody></table>
+<h2 id='usage'>Usage</h2>
+<p><code>serverControl.lua command [ServerName]</code></p>
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<p>Where <strong>command</strong> is the same command used in <code>systemctl &lt;command&gt;</code> and so can be any of the following:</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+<ul>
+<li>start</li>
+<li>stop</li>
+<li>enable</li>
+<li>disable</li>
+<li>restart</li>
+</ul>
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
+<p><strong>ServerName</strong> can be empty, meaning all of the servers in the table above or a given server name listed in the table above.</p>
+<h2 id='options-2'>Options</h2><pre class="highlight lua tab-lua"><code> <span class="o">-</span><span class="n">w</span><span class="p">,</span> <span class="c1">--wait                   wait for all process to finish before exiting on the stop command,</span>
+                              <span class="n">this</span> <span class="n">is</span> <span class="n">the</span> <span class="n">default</span> <span class="n">action</span>
+     <span class="c1">--waitTimeout=[SECONDS]  number of seconds to wait, default is 30 seconds</span>
+ <span class="o">-</span><span class="n">v</span><span class="p">,</span> <span class="c1">--verbose                a combined short and long option</span>
+     <span class="c1">--version                display version information, then exit</span>
+ <span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="c1">--help                   display this help, then exit</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="n">Here</span> <span class="ow">is</span> <span class="n">some</span> <span class="n">sample</span> <span class="n">python</span> <span class="n">code</span><span class="err">!</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Here</span> <span class="nx">is</span> <span class="nx">some</span> <span class="nx">sample</span> <span class="nx">javascript</span> <span class="nx">code</span><span class="o">!</span>
+</code></pre><h2 id='example-3'>Example</h2>
+<p><code>$ ./serverControl.lua restart</code></p>
 
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<p>Restart all servers</p>
+
+<p><code>$ ./serverControl.lua stop data</code></p>
+
+<p>Stop only the data server</p>
+<h1 id='set-timezone'>Set Timezone</h1>
+<p>File: <strong>setTimezone.lua</strong></p>
+
+<p>This tool sets the timezone based on the zone name, specified as <code>TimeZonename</code> sush as Asia/Singapore.</p>
+
+<p><code>setTimezone.lua [TimeZoneName]</code></p>
+<h2 id='options-3'>Options</h2><pre class="highlight lua tab-lua"><code> <span class="o">-</span><span class="n">r</span><span class="p">,</span> <span class="c1">--refresh      set the current timezone again, incase the TZ file needs refreshing</span>
+ <span class="o">-</span><span class="n">f</span><span class="p">,</span> <span class="c1">--force        on the '--default' option, if the timezone is already set then force the change</span>
+     <span class="c1">--version      display version information, then exit</span>
+ <span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="c1">--help         display this help, then exit</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="n">Here</span> <span class="ow">is</span> <span class="n">some</span> <span class="n">sample</span> <span class="n">python</span> <span class="n">code</span><span class="err">!</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Here</span> <span class="nx">is</span> <span class="nx">some</span> <span class="nx">sample</span> <span class="nx">javascript</span> <span class="nx">code</span><span class="o">!</span>
+</code></pre><h2 id='example-4'>Example</h2>
+<p>Sets the timezone for Singapore</p>
+
+<p><code>
+$ ./setTimezone.lua Asia/Singapore
+</code></p>
+<h1 id='zigbee'>Zigbee</h1>
+<p>File: <strong>ZigbeeTools.lua</strong></p>
+
+<p><strong>To Do</strong></p>
+
+<p>Still in development</p>
+<h1 id='zwave'>Zwave</h1>
+<p>File: <strong>ZwaveTools.lua</strong></p>
+<h2 id='usage-2'>Usage</h2><pre class="highlight lua tab-lua"><code><span class="n">zwaveTools</span><span class="p">.</span><span class="n">lua</span> <span class="o">&lt;</span><span class="n">command</span><span class="o">&gt;</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">command</span> <span class="n">options</span><span class="o">&gt;</span><span class="p">]</span>
 </code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieves a specific kitten.</p>
+<p>Where a commands can be one of the following:</p>
+<pre class="highlight lua tab-lua"><code><span class="n">pair</span>                                     <span class="o">-</span> <span class="n">adds</span> <span class="n">a</span> <span class="n">new</span> <span class="n">node</span> <span class="n">to</span> <span class="n">the</span> <span class="n">zwave</span> <span class="n">network</span><span class="p">.</span>
+<span class="n">update</span> <span class="o">&lt;</span><span class="n">nodeid</span><span class="o">&gt;</span>                          <span class="o">-</span> <span class="n">update</span> <span class="n">connected</span> <span class="n">zwave</span> <span class="n">devices</span> <span class="n">using</span> <span class="n">the</span> <span class="n">provided</span> <span class="s1">'node id'</span><span class="p">.</span>
+<span class="n">list</span>                                     <span class="o">-</span> <span class="n">list</span> <span class="n">all</span> <span class="n">nodes</span> <span class="n">on</span> <span class="n">the</span> <span class="n">zwave</span> <span class="n">network</span><span class="p">.</span>
+<span class="n">listen</span>                                   <span class="o">-</span> <span class="n">listen</span> <span class="k">for</span> <span class="n">events</span> <span class="n">on</span> <span class="n">the</span> <span class="n">zwave</span> <span class="n">network</span><span class="p">.</span>
+<span class="n">unpair</span> <span class="o">&lt;</span><span class="n">nodeid</span><span class="o">&gt;</span>                          <span class="o">-</span> <span class="n">delete</span> <span class="n">the</span> <span class="n">node</span> <span class="n">from</span> <span class="n">the</span> <span class="n">zwave</span> <span class="n">network</span><span class="p">,</span> <span class="n">you</span> <span class="n">must</span> <span class="n">provide</span> <span class="n">a</span> <span class="s1">'node id'</span> <span class="n">to</span> <span class="n">delete</span><span class="p">.</span>
+<span class="n">reset</span>                                    <span class="o">-</span> <span class="n">reset</span> <span class="n">the</span> <span class="n">zip</span> <span class="n">network</span><span class="p">.</span> <span class="n">You</span> <span class="n">will</span> <span class="n">need</span> <span class="n">to</span> <span class="n">power</span> <span class="n">off</span> <span class="n">the</span> <span class="n">gateway</span> <span class="n">after</span> <span class="n">completing</span> <span class="n">this</span> <span class="n">task</span><span class="p">.</span>
+<span class="n">switch</span> <span class="o">&lt;</span><span class="n">nodeid</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">on</span><span class="err">|</span><span class="n">off</span><span class="err">|</span><span class="n">read</span><span class="err">|</span><span class="n">toggle</span><span class="o">&gt;</span>     <span class="o">-</span> <span class="n">turn</span> <span class="n">on</span><span class="o">/</span><span class="n">off</span> <span class="n">a</span> <span class="n">switch</span> <span class="n">at</span> <span class="o">&lt;</span><span class="n">node</span> <span class="n">id</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">read</span> <span class="n">switch</span> <span class="n">value</span> <span class="ow">or</span> <span class="n">toggle</span> <span class="n">on</span><span class="o">/</span><span class="n">off</span> <span class="p">(</span> <span class="n">default</span><span class="p">).</span>
+<span class="n">discover</span>                                 <span class="o">-</span> <span class="n">search</span> <span class="n">the</span> <span class="n">network</span> <span class="k">for</span> <span class="n">the</span> <span class="n">Zwave</span> <span class="n">Gateway</span><span class="p">.</span>
+<span class="n">send</span> <span class="o">&lt;</span><span class="n">raw</span> <span class="n">command</span><span class="o">&gt;</span>                       <span class="o">-</span> <span class="n">send</span> <span class="n">to</span> <span class="n">the</span> <span class="n">zwave</span> <span class="n">controller</span> <span class="n">a</span> <span class="n">raw</span> <span class="n">command</span><span class="p">,</span> <span class="n">the</span> <span class="n">zipgateway</span> <span class="n">will</span> <span class="n">be</span> <span class="n">stopped</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="n">Here</span> <span class="ow">is</span> <span class="n">some</span> <span class="n">sample</span> <span class="n">python</span> <span class="n">code</span><span class="err">!</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Here</span> <span class="nx">is</span> <span class="nx">some</span> <span class="nx">sample</span> <span class="nx">javascript</span> <span class="nx">code</span><span class="o">!</span>
+</code></pre><h2 id='options-4'>Options</h2><pre class="highlight lua tab-lua"><code> <span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="c1">--help                      display this help, then exit.</span>
+     <span class="c1">--debug                     display extra information for debugging.</span>
+     <span class="c1">--logfile=FILENAME          write the log to FILENAME.</span>
+     <span class="c1">--timeout=SECONDS           Number of seconds to wait for the nodes to appear, defaults to 60 seconds.</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="n">Here</span> <span class="ow">is</span> <span class="n">some</span> <span class="n">sample</span> <span class="n">python</span> <span class="n">code</span><span class="err">!</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Here</span> <span class="nx">is</span> <span class="nx">some</span> <span class="nx">sample</span> <span class="nx">javascript</span> <span class="nx">code</span><span class="o">!</span>
+</code></pre><h2 id='example-5'>Example</h2>
+<p>Request a zwave to pair</p>
 
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the kitten to retrieve</td>
-</tr>
-</tbody></table>
-<h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -X DELETE
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"deleted"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">":("</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint deletes a specific kitten.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the kitten to delete</td>
-</tr>
-</tbody></table>
+<p><code>
+$ ./zwaveTools.lua pair
+</code></p>
 <h1 id='errors'>Errors</h1>
 <aside class="notice">
 This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
@@ -494,8 +677,7 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
       </div>
       <div class="dark-box">
           <div class="lang-selector">
-                <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="ruby">ruby</a>
+                <a href="#" data-language-name="lua">lua</a>
                 <a href="#" data-language-name="python">python</a>
                 <a href="#" data-language-name="javascript">javascript</a>
           </div>
